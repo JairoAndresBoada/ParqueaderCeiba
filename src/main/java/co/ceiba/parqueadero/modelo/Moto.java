@@ -1,5 +1,11 @@
 package co.ceiba.parqueadero.modelo;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+
+@Entity
+@DiscriminatorValue("1")
 public class Moto extends Vehiculo {
 	
 	private int cilindraje;

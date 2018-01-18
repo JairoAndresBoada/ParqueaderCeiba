@@ -3,14 +3,34 @@ package co.ceiba.parqueadero.modelo;
 import java.io.Serializable;
 import java.util.Calendar;
 
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
 public class Parqueadero implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	
+	@Id
+	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private Vehiculo vehiculo;
+	
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="placa")
+	@NotNull
+	private Vehiculo vehiculo;	
+	
+	@Column(name="fecha_ingreso")
+	@NotNull
 	private Calendar fechaIngreso;
+	
+	@Column(name="fecha_salida")
 	private Calendar fechaSalida;
 	
 	public Parqueadero(Vehiculo vehiculo, Calendar fechaIngreso) {
