@@ -18,26 +18,29 @@ public class Vehiculo {
 	@Id
 	@Column(name="placa")
 	private String Placa;
-
-	@Column(name="vehiculo_tipo",insertable = false, updatable = false)
-	private String tipo;
 	
 	public Vehiculo(String placa) {
 		super();
 		Placa = placa;
 	}
 
+	@Column(name="vehiculo_tipo",insertable = false, updatable = false)
+	private String tipo;
+	
+	public Vehiculo() {
+	}
+
 	public String getPlaca() {
 		return Placa;
 	}
-
-	public void setPlaca(String placa) {
-		Placa = placa;
+	public String getTipo() {
+		return tipo;
 	}
 	
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	
 	
 
 }
