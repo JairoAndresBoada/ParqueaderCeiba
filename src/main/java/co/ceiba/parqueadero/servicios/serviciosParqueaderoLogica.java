@@ -9,7 +9,7 @@ import co.ceiba.parqueadero.exepciones.ParqueaderoLogicaExcepsiones;
 import co.ceiba.parqueadero.exepciones.ParqueaderoServiciosExcepsiones;
 import co.ceiba.parqueadero.logicaNegocio.NegocioLogica;
 import co.ceiba.parqueadero.modelo.Parqueadero;
-import co.ceiba.parqueadero.repositorioLogica.RepositorioParqueadero;
+import co.ceiba.parqueadero.repositorioLogica.repositorioParqueadero;
 import co.ceiba.parqueadero.valoresfijos.ValoresFijos;
 
 public class ServiciosParqueaderoLogica implements ServiciosParqueadero {
@@ -19,7 +19,7 @@ public class ServiciosParqueaderoLogica implements ServiciosParqueadero {
 	NegocioLogica parqueaderoLogica;
 	
 	@Autowired
-	RepositorioParqueadero parqueaderorepository;
+	repositorioParqueadero parqueaderorepository;
 
 	@Override
 	public boolean ingresarVehiculoParqueadero(String placa, int cilindraje) throws ParqueaderoServiciosExcepsiones {
