@@ -16,10 +16,10 @@ import co.ceiba.parqueadero.valoresfijos.ValoresFijos;
 
 @Transactional
 @Repository
-public class repositorioParqueaderoImplementacion implements repositorioParqueadero {	
+public class RepositorioParqueaderoImplementacion implements RepositorioParqueadero {	
 	
 	@Autowired
-	repositorioVehiculo vehiculoRepository;	
+	RepositorioVehiculo vehiculoRepository;	
 	@PersistenceContext
 	private EntityManager entityManager;
 	

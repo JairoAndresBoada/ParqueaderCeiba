@@ -5,7 +5,7 @@ import co.ceiba.parqueadero.exepciones.VehiculoExcepsiones;
 import co.ceiba.parqueadero.modelo.Moto;
 import co.ceiba.parqueadero.modelo.Vehiculo;
 
-public interface repositorioVehiculo {
+public interface RepositorioVehiculo {
 	
 	List<Vehiculo> obtenerTodos() throws VehiculoExcepsiones;
 	Vehiculo insertar(String placa, int cilindraje) throws VehiculoExcepsiones;
