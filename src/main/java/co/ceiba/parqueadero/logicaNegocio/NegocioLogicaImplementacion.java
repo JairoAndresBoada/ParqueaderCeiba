@@ -11,13 +11,13 @@ import co.ceiba.parqueadero.exepciones.VehiculoExcepsiones;
 import co.ceiba.parqueadero.modelo.Moto;
 import co.ceiba.parqueadero.modelo.Parqueadero;
 import co.ceiba.parqueadero.modelo.Vehiculo;
-import co.ceiba.parqueadero.repositorio.repositorioParqueadero;
-import co.ceiba.parqueadero.repositorio.repositorioVehiculo;
+import co.ceiba.parqueadero.repositorioLogica.repositorioParqueadero;
+import co.ceiba.parqueadero.repositorioLogica.repositorioVehiculo;
 import co.ceiba.parqueadero.valoresfijos.ValoresFijos;
 
 @Transactional
 @Service
-public class LogicaImplementacion implements NegocioLogica {
+public class NegocioLogicaImplementacion implements NegocioLogica {
 	
 	@Autowired
 	repositorioVehiculo vehiculoRepositorio;

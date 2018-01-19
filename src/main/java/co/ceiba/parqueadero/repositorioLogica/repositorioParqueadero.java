@@ -1,4 +1,4 @@
-package co.ceiba.parqueadero.repositorio;
+package co.ceiba.parqueadero.repositorioLogica;
 
 import java.util.Calendar;
 import java.util.List;
