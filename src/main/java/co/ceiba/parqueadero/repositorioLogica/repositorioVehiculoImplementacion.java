@@ -27,7 +27,7 @@ public class RepositorioVehiculoImplementacion implements RepositorioVehiculo {
 	public List<Vehiculo> obtenerTodos() throws VehiculoExcepsiones {
 		try {
 			String hql = "FROM Vehiculo";
-			return (List<Vehiculo>) entityManager.createQuery(hql).getResultList();// $COVERAGE-IGNORE$
+			return (List<Vehiculo>) entityManager.createQuery(hql).getResultList();
 		}catch(Exception e) {
 			throw new VehiculoExcepsiones(ValoresFijos.ERROR_TODOS_LOS_VEHICULOS, e);
 		}
@@ -38,14 +38,14 @@ public class RepositorioVehiculoImplementacion implements RepositorioVehiculo {
 		Vehiculo vehiculo;
 		try {
 			if(cilindraje==0) {
-				vehiculo=new Carro(placa.toUpperCase()); // $COVERAGE-IGNORE$
+				vehiculo=new Carro(placa.toUpperCase());
 			}else {
-				vehiculo=new Moto(placa.toUpperCase(),cilindraje); // $COVERAGE-IGNORE$
+				vehiculo=new Moto(placa.toUpperCase(),cilindraje); 
 			}
 			entityManager.persist(vehiculo);
 			return vehiculo;
 		}catch(Exception e) {
-			throw new VehiculoExcepsiones(ValoresFijos.ERROR_INSERTAR,e); // $COVERAGE-IGNORE$
+			throw new VehiculoExcepsiones(ValoresFijos.ERROR_INSERTAR,e);
 		}
 	}
 

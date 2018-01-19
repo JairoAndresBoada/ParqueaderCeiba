@@ -8,8 +8,7 @@ public class ParqueaderoExcepsiones extends Exception {
 		super();
 	}
 
-	public ParqueaderoExcepsiones(String message, Throwable cause, boolean enableSuppression,
-			boolean writableStackTrace) {
+	public ParqueaderoExcepsiones(String message, Throwable cause, boolean enableSuppression,boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 	}
 

@@ -20,10 +20,23 @@ import co.ceiba.parqueadero.valoresfijos.ValoresFijos;
 public class NegocioLogicaImplementacion implements NegocioLogica {
 	
 	@Autowired
-	RepositorioVehiculo vehiculoRepositorio;
-	@Autowired
 	RepositorioParqueadero parqueaderoRepositorio;
-		
+	@Autowired
+	RepositorioVehiculo vehiculoRepositorio;
+	
+	@Override
+	public double calcularMonto(Parqueadero parqueadero)throws VehiculoExcepsiones {
+		long horas=cantidadHoras(parqueadero.getFechaIngreso(),parqueadero.getFechaSalida());
+		long minutos=cantidadMinutos(parqueadero.getFechaIngreso(),parqueadero.getFechaSalida());
+		long minutosHora=minutos%60;
+		long dias= horas/24;
+		long horasDia= horas%24;
+		double monto=0;
+		if(minutosHora>0) {horasDia++;}
+		monto=calcularMontoVehiculo(dias, horasDia, parqueadero.getVehiculo());
+		return monto;
+	}
+	
 	@Override
 	public boolean ingresarVehiculo(String placa, int cilindraje) throws ParqueaderoLogicaExcepsiones {
 		try {
@@ -40,18 +53,7 @@ public class NegocioLogicaImplementacion implements NegocioLogica {
 		}
 	}
 	
-	@Override
-	public double calcularMonto(Parqueadero parqueadero)throws VehiculoExcepsiones {
-		long horas=cantidadHoras(parqueadero.getFechaIngreso(),parqueadero.getFechaSalida());
-		long minutos=cantidadMinutos(parqueadero.getFechaIngreso(),parqueadero.getFechaSalida());
-		long minutosHora=minutos%60;
-		long dias= horas/24;
-		long horasDia= horas%24;
-		double monto=0;
-		if(minutosHora>0) {horasDia++;}
-		monto=calcularMontoVehiculo(dias, horasDia, parqueadero.getVehiculo());
-		return monto;
-	}
+	
 	
 	public void validaciones(String placa, int cilindraje, Calendar fecha) throws Exception {
 		validarExistencia(placa);

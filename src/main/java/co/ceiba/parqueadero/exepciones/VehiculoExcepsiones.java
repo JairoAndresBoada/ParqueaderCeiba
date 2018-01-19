@@ -8,12 +8,12 @@ public class VehiculoExcepsiones extends Exception {
 		super();
 	}
 	
-	public VehiculoExcepsiones (String message, Throwable cause) {
-		super(message,cause);
-	}
-	
 	public VehiculoExcepsiones (String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
 		super(message,cause, enableSuppression, writableStackTrace);
+	}
+	
+	public VehiculoExcepsiones (String message, Throwable cause) {
+		super(message,cause);
 	}
 	
 	public VehiculoExcepsiones (String message) {

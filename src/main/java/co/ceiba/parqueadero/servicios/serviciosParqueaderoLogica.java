@@ -2,6 +2,9 @@ package co.ceiba.parqueadero.servicios;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.jvnet.hk2.annotations.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import co.ceiba.parqueadero.exepciones.ParqueaderoExcepsiones;
@@ -12,6 +15,8 @@ import co.ceiba.parqueadero.modelo.Parqueadero;
 import co.ceiba.parqueadero.repositorioLogica.RepositorioParqueadero;
 import co.ceiba.parqueadero.valoresfijos.ValoresFijos;
 
+@Transactional
+@Service
 public class ServiciosParqueaderoLogica implements ServiciosParqueadero {
 	
 	

@@ -8,6 +8,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@SuppressWarnings("serial")
 @Entity
 @Inheritance
 @DiscriminatorColumn(name="vehiculo_tipo")
