@@ -11,7 +11,7 @@ import co.ceiba.parqueadero.exepciones.VehiculoExcepsiones;
 import co.ceiba.parqueadero.modelo.Moto;
 import co.ceiba.parqueadero.modelo.Parqueadero;
 import co.ceiba.parqueadero.modelo.Vehiculo;
-import co.ceiba.parqueadero.repositorioLogica.repositorioParqueadero;
+import co.ceiba.parqueadero.repositorioLogica.RepositorioParqueadero;
 import co.ceiba.parqueadero.repositorioLogica.RepositorioVehiculo;
 import co.ceiba.parqueadero.valoresfijos.ValoresFijos;
 
@@ -22,7 +22,7 @@ public class NegocioLogicaImplementacion implements NegocioLogica {
 	@Autowired
 	RepositorioVehiculo vehiculoRepositorio;
 	@Autowired
-	repositorioParqueadero parqueaderoRepositorio;
+	RepositorioParqueadero parqueaderoRepositorio;
 		
 	@Override
 	public boolean ingresarVehiculo(String placa, int cilindraje) throws ParqueaderoLogicaExcepsiones {

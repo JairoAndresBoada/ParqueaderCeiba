@@ -7,7 +7,7 @@ import co.ceiba.parqueadero.exepciones.ParqueaderoExcepsiones;
 import co.ceiba.parqueadero.modelo.Parqueadero;
 import co.ceiba.parqueadero.modelo.Vehiculo;
 
-public interface repositorioParqueadero {
+public interface RepositorioParqueadero {
 	
 	boolean insertar(Vehiculo vehiculo, Calendar fechaIngreso) throws ParqueaderoExcepsiones;
 	Parqueadero actualizar(String placa, Calendar fechaSalida) throws ParqueaderoExcepsiones;
